@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pono Produções | Eventos em Harmonia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cores (Paleta Premium) */
+        :root {
+            --primary-color: #C5A059; /* Dourado elegante */
+            --dark-bg: #1A1A1A;       /* Grafite muito escuro / Preto */
+            --light-bg: #F9F9F9;      /* Fundo claro off-white */
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset e Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Tipografia */
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-bg);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Header e Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-bg);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Seções e Layout */
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero (Home) */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding-top: 80px; /* Compensa o header fixo */
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+
+        /* Sobre */
+        #sobre {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .sobre-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Cases de Sucesso */
+        #cases {
+            background-color: #FFFFFF;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .case-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .case-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--dark-bg); /* Placeholder para imagem */
+            background-image: linear-gradient(45deg, #1a1a1a, #333333);
+        }
+
+        .case-info {
+            padding: 20px;
+        }
+
+        .case-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Clientes */
+        #clientes {
+            background-color: var(--light-bg);
+        }
+
+        .clientes-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            opacity: 0.6; /* Deixa os logos dos clientes mais sutis */
+        }
+
+        .cliente-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            text-transform: uppercase;
+        }
+
+        /* Contato */
+        #contato {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        #contato h2 {
+            color: var(--text-light);
+        }
+
+        .contato-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        .contato-info, .contato-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contato-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contato-form input,
+        .contato-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-light);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contato-form input:focus,
+        .contato-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Em um projeto real, aqui entraria um menu sanduíche */
+            }
+            #home h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="https://i.ibb.co/4Rj2WVXs/Gemini-Generated-Image-sq45wisq45wisq45.png" alt="Logo Pono Produções">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>Harmonia em Cada Detalhe</h1>
+            <p>Conexão, equilíbrio e organização impecável para transformar a visão da sua marca em eventos inesquecíveis.</p>
+            <a href="#contato" class="btn">Planeje seu Evento</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Nossa Essência</h2>
+            <div class="sobre-content">
+                <p>Inspirados pela filosofia do Ho'oponopono, acreditamos que grandes eventos nascem do equilíbrio, da harmonia e da conexão genuína. Na <strong>Pono Produções</strong>, não entregamos apenas logística; entregamos experiências corporativas de alto padrão.</p>
+                <p>Somos especialistas em marketing de influência, lançamentos de marcas e produções publicitárias, sempre com um olhar atento à estética contemporânea e à organização impecável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases">
+        <div class="container">
+            <h2>Cases de Sucesso</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-img"></div>
+                    <div class="case-info">
+                        <h3>Lançamento Premium</h3>
+                        <p>Evento de reposicionamento de marca para o setor de tecnologia, reunindo 500 convidados em uma experiência imersiva.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img"></div>
+                    <div class="case-info">
+                        <h3>Convenção Anual</h3>
+                        <p>Produção completa da convenção de vendas com foco em engajamento, design de palco e cenografia clean.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-img"></div>
+                    <div class="case-info">
+                        <h3>Ativação de Marca</h3>
+                        <p>Estratégia de live marketing focada em formadores de opinião, gerando alto impacto nas redes sociais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clientes">
+        <div class="container">
+            <h2>Quem Confia em Nós</h2>
+            <div class="clientes-grid">
+                <div class="cliente-logo">Empresa Alpha</div>
+                <div class="cliente-logo">Tech Solutions</div>
+                <div class="cliente-logo">Grupo Global</div>
+                <div class="cliente-logo">Marca Premium</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2>Vamos Conversar</h2>
+            <div class="contato-wrapper">
+                <div class="contato-info">
+                    <p><strong>Email:</strong> ola@ponoproducoes.com.br</p>
+                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    <p><strong>Sede:</strong> Osasco, São Paulo - Brasil</p>
+                    <br>
+                    <p>Estamos prontos para transformar sua próxima ideia em um evento extraordinário.</p>
+                </div>
+                <div class="contato-form">
+                    <form onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
+                        <input type="text" placeholder="Seu Nome ou Empresa" required>
+                        <input type="email" placeholder="Seu E-mail" required>
+                        <textarea rows="5" placeholder="Conte-nos sobre o seu projeto..." required></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pono Produções. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
