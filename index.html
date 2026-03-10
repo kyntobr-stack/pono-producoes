@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pono Produções | Eventos em Harmonia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variáveis de Cores (Paleta Premium) */
+        /* Paleta de Cores Inspirada na Natureza e Equilíbrio */
         :root {
-            --primary-color: #C5A059; /* Dourado elegante */
-            --dark-bg: #1A1A1A;       /* Grafite muito escuro / Preto */
-            --light-bg: #F9F9F9;      /* Fundo claro off-white */
-            --text-dark: #333333;
+            --primary-gold: #C5A059;
+            --bg-sand: #FDFBF7;
+            --bg-sand-dark: #F2EFE9;
+            --text-dark: #2C2C2C;
             --text-light: #FFFFFF;
-            --transition: all 0.3s ease;
+            --mantra-color: #A89F91;
+            --transition: all 0.4s ease;
         }
 
-        /* Reset e Base */
+        /* Reset Básico */
         * {
             margin: 0;
             padding: 0;
@@ -31,62 +33,40 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
-            background-color: var(--light-bg);
+            background-color: var(--bg-sand);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Tipografia */
         h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark-bg);
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-        }
-
-        p {
             margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
-        /* Botões */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: var(--transition);
-            border: 2px solid var(--primary-color);
+        .subtitle {
+            text-align: center;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: var(--mantra-color);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
         }
 
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-        }
-
-        /* Header e Navegação */
+        /* Navegação */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
             z-index: 1000;
         }
 
@@ -100,32 +80,54 @@
         }
 
         .logo img {
-            max-height: 60px;
+            height: 50px;
             width: auto;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-bg);
-            font-weight: 600;
-            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 500;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--primary-gold);
         }
 
-        /* Seções e Layout */
+        /* Botão Global */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: transparent;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--text-dark);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--text-dark);
+            color: var(--bg-sand);
+        }
+
+        /* Estrutura de Seções */
         section {
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
         .container {
@@ -133,86 +135,112 @@
             margin: 0 auto;
         }
 
-        /* Hero (Home) */
+        /* Hero Section (Home) */
         #home {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            padding-top: 80px; /* Compensa o header fixo */
+            background: linear-gradient(rgba(253, 251, 247, 0.7), rgba(253, 251, 247, 0.9)), 
+                        url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=1920') center/cover;
+            padding-top: 80px;
+            position: relative;
         }
 
         #home h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        #home p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            font-weight: 300;
+        .mantra-text {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            opacity: 0.8;
         }
 
         /* Sobre */
         #sobre {
-            background-color: var(--light-bg);
-            text-align: center;
+            background-color: var(--bg-sand-dark);
         }
 
-        .sobre-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 20px;
             font-size: 1.1rem;
+            color: #555;
+        }
+
+        .sobre-mantra {
+            border-left: 2px solid var(--primary-gold);
+            padding-left: 20px;
+            margin-top: 30px;
+            font-family: 'Lora', serif;
+            font-style: italic;
         }
 
         /* Cases de Sucesso */
         #cases {
-            background-color: #FFFFFF;
+            background-color: var(--bg-sand);
         }
 
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .case-card {
-            background: var(--light-bg);
-            border-radius: 8px;
+            background: #fff;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: var(--transition);
         }
 
         .case-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
         .case-img {
             width: 100%;
-            height: 200px;
-            background-color: var(--dark-bg); /* Placeholder para imagem */
-            background-image: linear-gradient(45deg, #1a1a1a, #333333);
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
 
         .case-info {
-            padding: 20px;
+            padding: 30px;
         }
 
         .case-info h3 {
-            color: var(--primary-color);
+            font-size: 1.2rem;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Clientes */
+        .case-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Clientes Fictícios */
         #clientes {
-            background-color: var(--light-bg);
+            background-color: var(--bg-sand-dark);
+            text-align: center;
         }
 
         .clientes-grid {
@@ -220,20 +248,37 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
-            opacity: 0.6; /* Deixa os logos dos clientes mais sutis */
+            gap: 60px;
+            margin-top: 40px;
         }
 
         .cliente-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark-bg);
+            color: var(--text-dark);
             text-transform: uppercase;
+            letter-spacing: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .cliente-logo:hover {
+            opacity: 1;
+        }
+
+        .cliente-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
         }
 
         /* Contato */
         #contato {
-            background-color: var(--dark-bg);
+            background-color: var(--text-dark);
             color: var(--text-light);
         }
 
@@ -242,57 +287,63 @@
         }
 
         .contato-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contato-form {
+            margin-top: 40px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            justify-content: space-between;
-        }
-
-        .contato-info, .contato-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contato-info p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .contato-form input,
         .contato-form textarea {
             width: 100%;
             padding: 15px;
-            margin-bottom: 20px;
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
             color: var(--text-light);
-            border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
         }
 
         .contato-form input:focus,
         .contato-form textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: var(--primary-gold);
+        }
+
+        .contato-form .btn {
+            color: var(--text-light);
+            border-color: var(--text-light);
+            margin-top: 20px;
+        }
+
+        .contato-form .btn:hover {
+            background-color: var(--text-light);
+            color: var(--text-dark);
         }
 
         /* Footer */
         footer {
-            background-color: #111;
+            background-color: #1a1a1a;
             color: #888;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
-        /* Responsividade Básica */
+        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Em um projeto real, aqui entraria um menu sanduíche */
-            }
-            #home h1 {
-                font-size: 2.5rem;
-            }
+            .nav-links { display: none; }
+            #home h1 { font-size: 2.5rem; }
+            .sobre-grid { grid-template-columns: 1fr; }
+            .clientes-grid { gap: 40px; flex-direction: column; }
         }
     </style>
 </head>
@@ -301,15 +352,15 @@
     <header>
         <div class="nav-container">
             <a href="#home" class="logo">
-                <img src="https://i.ibb.co/4Rj2WVXs/Gemini-Generated-Image-sq45wisq45wisq45.png" alt="Logo Pono Produções">
+                <img src="https://i.ibb.co/4Rj2WVXs/Gemini-Generated-Image-sq45wisq45wisq45.png" alt="Pono Produções">
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#cases">Cases</a></li>
-                    <li><a href="#clientes">Clientes</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Essência</a></li>
+                    <li><a href="#cases">Casos Reais</a></li>
+                    <li><a href="#clientes">Alianças</a></li>
+                    <li><a href="#contato">Conexão</a></li>
                 </ul>
             </nav>
         </div>
@@ -317,45 +368,63 @@
 
     <section id="home">
         <div class="container">
-            <h1>Harmonia em Cada Detalhe</h1>
-            <p>Conexão, equilíbrio e organização impecável para transformar a visão da sua marca em eventos inesquecíveis.</p>
-            <a href="#contato" class="btn">Planeje seu Evento</a>
+            <h1>PONO PRODUÇÕES</h1>
+            <p class="mantra-text">Sinto muito. Me perdoe. Te amo. Sou grato.</p>
+            <p style="margin-bottom: 40px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Organização e impacto de marca em perfeito equilíbrio. Facilitamos eventos onde a conexão é intuitiva e cada detalhe flui em harmonia.
+            </p>
+            <a href="#contato" class="btn">Inicie seu Processo</a>
         </div>
     </section>
 
     <section id="sobre">
         <div class="container">
-            <h2>Nossa Essência</h2>
-            <div class="sobre-content">
-                <p>Inspirados pela filosofia do Ho'oponopono, acreditamos que grandes eventos nascem do equilíbrio, da harmonia e da conexão genuína. Na <strong>Pono Produções</strong>, não entregamos apenas logística; entregamos experiências corporativas de alto padrão.</p>
-                <p>Somos especialistas em marketing de influência, lançamentos de marcas e produções publicitárias, sempre com um olhar atento à estética contemporânea e à organização impecável.</p>
+            <h2>O Alinhamento Perfeito</h2>
+            <p class="subtitle">Nossa Essência e Propósito</p>
+            
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <p>Inspirados pela filosofia havaiana do <strong>Ho'oponopono</strong>, acreditamos que todo grande evento nasce da harmonia interior e exterior. Nosso trabalho é "corrigir o curso", remover os ruídos e criar espaços onde marcas e pessoas se conectam de forma genuína.</p>
+                    <p>Não somos apenas uma produtora de eventos e live marketing; somos facilitadores de experiências equilibradas. Do planejamento à execução, garantimos que a energia do seu projeto flua perfeitamente.</p>
+                    <div class="sobre-mantra">
+                        "Produzir com propósito é transformar logística em memória. Limpamos os obstáculos para que a sua visão brilhe com clareza."
+                    </div>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Equilíbrio e Harmonia" style="width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="cases">
         <div class="container">
-            <h2>Cases de Sucesso</h2>
+            <h2>Casos de Harmonia</h2>
+            <p class="subtitle">Experiências materializadas com clareza</p>
+
             <div class="cases-grid">
                 <div class="case-card">
-                    <div class="case-img"></div>
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=600" alt="Simpósio Corporativo" class="case-img">
                     <div class="case-info">
-                        <h3>Lançamento Premium</h3>
-                        <p>Evento de reposicionamento de marca para o setor de tecnologia, reunindo 500 convidados em uma experiência imersiva.</p>
+                        <h3>Simpósio do Equilíbrio</h3>
+                        <p>Alinhamento corporativo para 800 executivos. Transformamos um pavilhão frio em um ecossistema de aprendizado e conexão profunda.</p>
+                        <span style="font-size: 0.8rem; font-weight: bold; color: var(--primary-gold);">CORPORATE ALIGNMENT</span>
                     </div>
                 </div>
                 <div class="case-card">
-                    <div class="case-img"></div>
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=600" alt="Gala e Celebração" class="case-img">
                     <div class="case-info">
-                        <h3>Convenção Anual</h3>
-                        <p>Produção completa da convenção de vendas com foco em engajamento, design de palco e cenografia clean.</p>
+                        <h3>Gala da Gratidão</h3>
+                        <p>Celebração de fim de ano focada no reconhecimento. Design de interiores aconchegante, gastronomia afetiva e cerimonial impecável.</p>
+                        <span style="font-size: 0.8rem; font-weight: bold; color: var(--primary-gold);">DIVINE CELEBRATION</span>
                     </div>
                 </div>
                 <div class="case-card">
-                    <div class="case-img"></div>
+                    <img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&q=80&w=600" alt="Lançamento de Produto" class="case-img">
                     <div class="case-info">
-                        <h3>Ativação de Marca</h3>
-                        <p>Estratégia de live marketing focada em formadores de opinião, gerando alto impacto nas redes sociais.</p>
+                        <h3>Ativação "Clareza"</h3>
+                        <p>Lançamento de marca minimalista. Utilizamos o silêncio, o design limpo e a iluminação sensorial para destacar a verdadeira essência do produto.</p>
+                        <span style="font-size: 0.8rem; font-weight: bold; color: var(--primary-gold);">PRODUCT LAUNCH</span>
                     </div>
                 </div>
             </div>
@@ -364,41 +433,51 @@
 
     <section id="clientes">
         <div class="container">
-            <h2>Quem Confia em Nós</h2>
+            <h2>Alianças Feitas</h2>
+            <p class="subtitle">Marcas que vibraram em nossa mesma sintonia</p>
+            
             <div class="clientes-grid">
-                <div class="cliente-logo">Empresa Alpha</div>
-                <div class="cliente-logo">Tech Solutions</div>
-                <div class="cliente-logo">Grupo Global</div>
-                <div class="cliente-logo">Marca Premium</div>
+                <div class="cliente-logo">
+                    <span class="cliente-icon">◬</span>
+                    AETHEL
+                </div>
+                <div class="cliente-logo">
+                    <span class="cliente-icon">◎</span>
+                    CÓSMICA
+                </div>
+                <div class="cliente-logo">
+                    <span class="cliente-icon">⎔</span>
+                    EQUILIBRIUM
+                </div>
+                <div class="cliente-logo">
+                    <span class="cliente-icon">≋</span>
+                    FLOW
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contato">
         <div class="container">
-            <h2>Vamos Conversar</h2>
             <div class="contato-wrapper">
-                <div class="contato-info">
-                    <p><strong>Email:</strong> ola@ponoproducoes.com.br</p>
-                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
-                    <p><strong>Sede:</strong> Osasco, São Paulo - Brasil</p>
-                    <br>
-                    <p>Estamos prontos para transformar sua próxima ideia em um evento extraordinário.</p>
-                </div>
-                <div class="contato-form">
-                    <form onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
-                        <input type="text" placeholder="Seu Nome ou Empresa" required>
-                        <input type="email" placeholder="Seu E-mail" required>
-                        <textarea rows="5" placeholder="Conte-nos sobre o seu projeto..." required></textarea>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
-                    </form>
-                </div>
+                <h2>Crie Conosco</h2>
+                <p style="font-family: 'Lora', serif; font-style: italic; opacity: 0.8; margin-bottom: 30px;">
+                    "Sinto muito. Me perdoe. Te amo. Sou grato."
+                </p>
+                <p>Vamos organizar um evento que realmente conecta. Limpe a estática, alinhe o curso e permita que a sua marca brilhe em estado de Pono.</p>
+                
+                <form class="contato-form" onsubmit="event.preventDefault(); alert('Mensagem enviada com gratidão!');">
+                    <input type="text" placeholder="Seu Nome ou Marca" required>
+                    <input type="email" placeholder="Seu melhor E-mail" required>
+                    <textarea rows="4" placeholder="Qual a intenção do seu próximo evento?" required></textarea>
+                    <button type="submit" class="btn">Enviar Intenção</button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Pono Produções. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Pono Produções. Em estado de equilíbrio e gratidão.</p>
     </footer>
 
 </body>
